@@ -15,12 +15,14 @@ async def assistants_handler(request):
     api_token = data['api_token']
     question = data['question']
     thread_id = data['thread_id']
+    print(data)
     answer = await execute(
         question=question,
         token=api_token,
         thread_id=thread_id,
         assistant_id=assistant_id
     )
+    print(answer)
     return web.json_response({
         'status': True,
         'answer': {"text": answer[0],
