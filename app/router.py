@@ -11,7 +11,7 @@ app = web.Application()
 async def assistants_handler(request):
     data = await request.json()
 
-    assistant_id = data['assistant_id'],
+    assistant_id = data['assistant_id']
     api_token = data['api_token']
     question = data['question']
     thread_id = data['thread_id']
